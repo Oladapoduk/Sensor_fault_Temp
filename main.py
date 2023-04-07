@@ -75,7 +75,7 @@ async def predict_route(request:Request,file: UploadFile = File(...)):
         df['predicted_column'] = y_pred
         df['predicted_column'].replace(TargetValueMapping().reverse_mapping(),inplace=True)
         return df.to_html()
-        decide how to return file to user.
+        # decide how to return file to user.
         
     except Exception as e:
         raise Response(f"Error Occured! {e}")
